@@ -198,11 +198,11 @@ $(function () {
 $(function () {
     $('#consoles').highcharts({
         title: {
-            text: 'Distrubution of video game ratings on IGN.com by console',
+            text: 'Distrubution of video game ratings on IGN.com by platform',
             x: -20 //center
         },
         subtitle: {
-            text: 'Select consoles on right to turn on/off - Source: IGN.com - by Ed Lewis',
+            text: 'Select platforms on right to turn on/off - Source: IGN.com - by Ed Lewis',
             x: -20
         },
         xAxis: {
@@ -255,10 +255,10 @@ $(function () {
             data: [0,0.98,3.92,5.89,12.3,17.6,22.0,28.2,8.84,0],
             visible:false
         }, {
-            name: 'PlayStation Portable',
-            data: [0,2.53,2.21,6.49,12.9,21.5,30.7,17.4,6.02,0],
+            name: 'Nintendo 64',
+            data: [0.33,1.32,4.98,7.97,11.6,15.2,21.9,24.2,11.9,0.33],
             visible:false
-        }, {
+        },{
             name: 'PlayStation 4',
             data: [0.47,0.95,1.42,2.38,5.23,11.4,25.2,31.9,19.5,1.42],
         }, {
@@ -277,6 +277,17 @@ $(function () {
             name: 'PC',
             data: [0.45,1.44,2.72,5.42,9.71,15.4,25.7,28.7,10.2,0.06],
         }, {
+            name: 'PlayStation Vita',
+            data: [0,0,3.31,5.96,7.94,12.5,23.8,26.4,19.8,0],
+            visible:false
+        }, {
+            name: 'PlayStation Portable',
+            data: [0,2.53,2.21,6.49,12.9,21.5,30.7,17.4,6.02,0],
+            visible:false
+        },  {
+            name: 'Nintendo 3DS',
+            data: [0,0.96,1.93,3.38,10.6,13.0,27.5,29.9,12.5,0],
+        }, {
             name: 'Nintendo DSi',
             data: [0.39,1.17,5.88,9.41,16.0,13.3,30.1,20.7,2.74,0],
             visible:false
@@ -284,16 +295,93 @@ $(function () {
             name: 'Nintendo DS',
             data: [0.67,2.39,5.85,12.4,14.6,19.9,24.1,16.2,3.55,0],
             visible:false
+        },{
+            name: 'Game Boy Advance',
+            data: [0.32,2.09,4.83,8.54,13.0,18.2,21.2,23.2,8.38,0],
+            visible:false
         }, {
-            name: 'Nintendo 3DS',
-            data: [0,0.96,1.93,3.38,10.6,13.0,27.5,29.9,12.5,0],
+            name: 'Dreamcast',
+            data: [0.34,3.49,3.49,5.24,5.59,13.9,16.0,31.4,19.9,0.34],
+            visible:false
         }
-
-
-
         ]
     });
 });
+
+
+$(function () {
+    $('#reviewsperplatform').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'IGN.com video game reviews per platform'
+        },
+        subtitle: {
+            text: 'Source: IGN.com'
+        },
+        xAxis: {
+            type: 'category',
+            labels: {
+                rotation: -45,
+                style: {
+                    fontSize: '13px',
+                    fontFamily: 'Verdana, sans-serif'
+                }
+            }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Reviews per platform'
+            }
+        },
+        legend: {
+            enabled: false
+        },
+        tooltip: {
+            pointFormat: '<b>{point.y:.0f}</b>'
+        },
+        series: [{
+            name: 'Reviews',
+            data: [
+                ['Xbox One', 160],
+                ['Xbox 360', 1629],
+                ['Xbox', 822],
+                ['Wii U', 105],
+                ['Wii', 1364],
+                ['GameCube', 509],
+                ['Nintendo 64', 301],
+                ['PlayStation 4', 210],                
+                ['PlayStation 3', 1353],
+                ['PlayStation 2', 1687],                
+                ['PlayStation', 952],
+                //['PC', 3262],                
+                ['PlayStation Vita', 151],
+                ['PlayStation Portable', 631],
+                ['Nintendo 3DS', 207],                
+                ['Nintendo DSi', 255],
+                ['Nintendo DS', 1042],                
+                ['Game Boy Advance', 620],                
+                ['Dreamcast', 286],
+                ['Wireless', 908],
+            ],
+            dataLabels: {
+                enabled: true,
+                rotation: -90,
+                color: '#FFFFFF',
+                align: 'right',
+                format: '{point.y:.0f}', // one decimal
+                y: 10, // 10 pixels down from the top
+                style: {
+                    fontSize: '13px',
+                    fontFamily: 'Verdana, sans-serif'
+                }
+            }
+        }]
+    });
+});
+
 		</script>
 	</head>
 	<body>
@@ -305,6 +393,8 @@ $(function () {
 <div id="container" style="min-width: 310px; height: 600px; margin: 0 auto"></div>
 <div id="reviewsperyear" style="min-width: 310px; height: 600px; margin: 0 auto"></div>
 <div id="consoles" style="min-width: 310px; height: 600px; margin: 0 auto"></div>
+<div id="reviewsperplatform" style="min-width: 310px; height: 600px; margin: 0 auto"></div>
+
 
 	</body>
 </html>
