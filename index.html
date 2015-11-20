@@ -8,7 +8,7 @@
 	<!--	<style type="text/css">
 ${demo.css}
 		</style>-->
-		<script type="text/javascript">
+<script type="text/javascript">
 $(function () {
     $('#container').highcharts({
         title: {
@@ -121,6 +121,106 @@ $(function () {
         }]
     });
 });
+
+$(function () {
+    $('#consoles').highcharts({
+        title: {
+            text: 'Distrubution of video game ratings on IGN.com by console',
+            x: -20 //center
+        },
+        subtitle: {
+            text: 'Select consoles on right to turn on/off - Source: IGN.com - by Ed Lewis',
+            x: -20
+        },
+        xAxis: {
+            categories: ['1', '2', '3', '4', '5', '6',
+                '7', '8', '9', '10']
+        },
+        yAxis: {
+            title: {
+                text: 'Percentage'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: '%'
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [{
+            name: 'Xbox One',
+            data: [0,1.2,0,3.1,6.2,11.,24.,34.,18.,1.2],
+        }, {
+            name: 'Xbox 360',
+            data: [0.1,1.4,2.7,6.8,10.,15.,23.,27.,11.,0.3],
+            visible:false
+        }, {
+            name: 'Xbox',
+            data: [0.48,1.21,3.89,5.96,8.02,15.5,21.7,31.8,11.1,0],
+            visible:false
+        }, {
+            name: 'Wireless',
+            data: [0.22,0.88,1.98,3.19,7.81,14.7,37.2,28.6,5.17,0.11],
+            visible:false
+        }, {
+            name: 'Wii U',
+            data: [0,0,2.85,4.76,9.52,11.4,24.7,22.8,23.8,0],
+        }, {
+            name: 'Wii',
+            data: [1.24,4.03,5.49,10.5,14.5,15.8,24.4,18.9,4.54,0.29],
+            visible:false
+        }, {
+            name: 'GameCube',
+            data: [0,0.98,3.92,5.89,12.3,17.6,22.0,28.2,8.84,0],
+            visible:false
+        }, {
+            name: 'PlayStation Portable',
+            data: [0,2.53,2.21,6.49,12.9,21.5,30.7,17.4,6.02,0],
+            visible:false
+        }, {
+            name: 'PlayStation 4',
+            data: [0.47,0.95,1.42,2.38,5.23,11.4,25.2,31.9,19.5,1.42],
+        }, {
+            name: 'PlayStation 3',
+            data: [0.07,1.33,2.58,6.43,9.53,14.4,23.5,28.0,13.2,0.66],
+            visible:false
+        }, {
+            name: 'PlayStation 2',
+            data: [0.29,2.37,4.26,7.82,10.6,16.1,26.3,23.9,8.18,0],
+            visible:false
+        }, {
+            name: 'PlayStation',
+            data: [0.84,3.46,5.67,9.24,10.5,15.2,22.3,23.5,9.13,0],
+            visible:false
+        }, {
+            name: 'PC',
+            data: [0.45,1.44,2.72,5.42,9.71,15.4,25.7,28.7,10.2,0.06],
+        }, {
+            name: 'Nintendo DSi',
+            data: [0.39,1.17,5.88,9.41,16.0,13.3,30.1,20.7,2.74,0],
+            visible:false
+        }, {
+            name: 'Nintendo DS',
+            data: [0.67,2.39,5.85,12.4,14.6,19.9,24.1,16.2,3.55,0],
+            visible:false
+        }, {
+            name: 'Nintendo 3DS',
+            data: [0,0.96,1.93,3.38,10.6,13.0,27.5,29.9,12.5,0],
+        }
+
+
+
+        ]
+    });
+});
 		</script>
 	</head>
 	<body>
@@ -130,6 +230,7 @@ $(function () {
  <script src="../../js/modules/exporting.js"></script>-->
 
 <div id="container" style="min-width: 310px; height: 600px; margin: 0 auto"></div>
+<div id="consoles" style="min-width: 310px; height: 600px; margin: 0 auto"></div>
 
 	</body>
 </html>
