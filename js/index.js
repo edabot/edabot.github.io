@@ -263,8 +263,14 @@ function Particle(x, y, dx, dy, r, ddy) {
   var distance = Math.random() * 8.5
   this.x = x + Math.sin(angle) * distance;
   this.y = y + Math.cos(angle) * distance;
-  this.dx = (Math.random() * 100 - 50) * Math.abs(ddy);
-  this.dy = (Math.random() * 100 - 50) * Math.abs(ddy);
+  this.dx = (Math.random() * 200 - 100) * Math.abs(ddy);
+  this.dy = (Math.random() * 200 - 100) * Math.abs(ddy);
+
+  if (ddy > 0) {
+    this.dx += dx;
+    this.dy += dy;
+  }
+
   this.r = 3;
   this.opacity = 2;
   this.timeLeft = 2;
@@ -277,6 +283,9 @@ function Particle(x, y, dx, dy, r, ddy) {
     }
     this.x += this.dx;
     this.y += this.dy;
+    this.dx *= .9;
+    this.dy *= .9;
+
     this.r -= .14;
     this.opacity -= .1;
     this.redness += 25;
@@ -300,7 +309,7 @@ function Particle(x, y, dx, dy, r, ddy) {
 
 function addParticle() {
   for (var i = 0; i < 2; i++) {
-    particles.push(new Particle(ball.x, ball.y, 0, 0, 5, ball.ddy));
+    particles.push(new Particle(ball.x, ball.y, ball.dx, ball.dy, 5, ball.ddy));
   }
 }
 
