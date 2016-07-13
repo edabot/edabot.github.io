@@ -308,7 +308,7 @@ function Particle(x, y, dx, dy, r, ddy) {
 }
 
 function addParticle() {
-  for (var i = 0; i < 2; i++) {
+  for (var i = 0; i < 10; i++) {
     particles.push(new Particle(ball.x, ball.y, ball.dx, ball.dy, 5, ball.ddy));
   }
 }
