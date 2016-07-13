@@ -259,9 +259,10 @@ function drawGamePieces() {
 }
 
 function Particle(x, y, dx, dy, r, ddy) {
-
-  this.x = x + Math.random() * 16 - 8;
-  this.y = y + Math.random() * 16 - 8;
+  var angle = Math.random() * 2 * Math.PI;
+  var distance = Math.random() * 8.5
+  this.x = x + Math.sin(angle) * distance;
+  this.y = y + Math.cos(angle) * distance;
   this.dx = (Math.random() * 100 - 50) * Math.abs(ddy);
   this.dy = (Math.random() * 100 - 50) * Math.abs(ddy);
   this.r = 3;
@@ -271,6 +272,9 @@ function Particle(x, y, dx, dy, r, ddy) {
   if (this.redness < 0) {this.redness = 0}
 
   this.update = function() {
+    if (this.y + this.dy < 100 || this.y + this.dy > 100 + field.height) {
+      this.dy = -this.dy;
+    }
     this.x += this.dx;
     this.y += this.dy;
     this.r -= .14;
@@ -295,7 +299,9 @@ function Particle(x, y, dx, dy, r, ddy) {
 }
 
 function addParticle() {
-  particles.push(new Particle(ball.x, ball.y, 0, 0, 5, ball.ddy));
+  for (var i = 0; i < 2; i++) {
+    particles.push(new Particle(ball.x, ball.y, 0, 0, 5, ball.ddy));
+  }
 }
 
 function drawParticles(){
