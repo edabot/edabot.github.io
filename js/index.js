@@ -107,9 +107,8 @@ function paddleHit(mouseSpeed) {
   if (ball.x + ball.dx > leftMargin + field.width - 30) {
     hitSpot = ball.y - paddleRight.y
     if (hitSpot > -10 && hitSpot < 110) {
-      ball.dx = -ball.dx;
+      ball.dx = -ball.dx - .5;
       ball.ddy = 0;
-      ball.dx -= .5
     }
     // if (hitSpot > -9 && hitSpot <= 0) { ball.dy = -5}
     // if (hitSpot > 0 && hitSpot <= 11) { ball.dy = -4}
@@ -225,11 +224,11 @@ function moveBall(ball) {
 
 
   // endzone hit
-  if (ball.x + ball.dx < leftMargin + ball.radius) {
+  if (ball.x + ball.dx < leftMargin + ball.radius - 50) {
     resetBall();
     score.right += 1;
   }
-  if (ball.x + ball.dx > leftMargin + field.width - ball.radius) {
+  if (ball.x + ball.dx > leftMargin + field.width - ball.radius + 50) {
     resetBall();
     score.left += 1;
   }
