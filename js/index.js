@@ -84,7 +84,7 @@ function moveRightPaddle() {
 
 function paddleHit(mouseSpeed) {
   var hitSpot = 0;
-  if (ball.x + ball.dx < leftMargin + 30) {
+  if (ball.x + ball.dx < leftMargin + 30 && ball.x + ball.dx > leftMargin +20) {
     hitSpot = ball.y - paddleLeft.y
     if (hitSpot > -10 && hitSpot < 110) {
       ball.dx = -ball.dx;
@@ -104,7 +104,8 @@ function paddleHit(mouseSpeed) {
     if (hitSpot > 100 && hitSpot < 59) { ball.dy = 5}
     if (ball.ddy > 0) { ball.dy = 0 }
   }
-  if (ball.x + ball.dx > leftMargin + field.width - 30) {
+  if (ball.x + ball.dx > leftMargin + field.width - 30  &&
+      ball.x + ball.dx < leftMargin + field.width - 20) {
     hitSpot = ball.y - paddleRight.y
     if (hitSpot > -10 && hitSpot < 110) {
       ball.dx = -ball.dx - .5;
@@ -270,8 +271,8 @@ function Particle(x, y, dx, dy, r, ddy) {
   this.dy = (Math.random() * 200 - 100) * Math.abs(ddy);
 
   if (ddy > 0) {
-    this.dx += dx;
-    this.dy += dy;
+    this.dx += dx * 1.2;
+    this.dy += dy * 1.2;
   }
 
   this.r = 3;
