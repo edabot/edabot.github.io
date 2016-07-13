@@ -169,7 +169,9 @@ function drawPaddle(paddle) {
 
 function moveBall(ball) {
   // ceiling hit
-  if (ball.y + ball.dy < 100 + ball.radius) {
+  if (ball.y + ball.dy < 100 + ball.radius &&
+      ball.x > leftMargin - ball.radius &&
+      ball.x < leftMargin + field.width + ball.radius) {
     ball.dy = -ball.dy;
 
     //going right
@@ -195,7 +197,9 @@ function moveBall(ball) {
     ball.ddy = 0;
   }
   // floor hit
-  if (ball.y + ball.dy > 100 + field.height - ball.radius) {
+  if (ball.y + ball.dy > 100 + field.height - ball.radius &&
+      ball.x > leftMargin - ball.radius &&
+      ball.x < leftMargin + field.width + ball.radius) {
     ball.dy = -ball.dy;
 
     //going right
