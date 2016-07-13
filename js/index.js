@@ -247,7 +247,7 @@ function drawGameField(){
   c.fillRect(leftMargin + 25, 90, field.width - 50, 10);
   c.fillRect(leftMargin + 25, 100 + field.height, field.width - 50, 10);
   showScore();
-  showSpin(ball.ddy);
+  // showSpin(ball.ddy);
 }
 
 function drawGamePieces() {
@@ -324,7 +324,6 @@ function animate(){
   addParticle();
   drawParticles();
   drawGamePieces();
-  console.log(particles);
 
   lastMouseY = mouse.y;
 
