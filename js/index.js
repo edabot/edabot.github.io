@@ -84,9 +84,11 @@ function moveRightPaddle() {
 
 function paddleHit(mouseSpeed) {
   var hitSpot = 0;
-  if (ball.x + ball.dx < leftMargin + 30 && ball.x + ball.dx > leftMargin + 15) {
-    hitSpot = ball.y - paddleLeft.y
+  if (ball.x + ball.dx < leftMargin + 30 - ball.dx &&
+      ball.x + ball.dx > leftMargin + 20) {
+      hitSpot = ball.y - paddleLeft.y
     if (hitSpot > -10 && hitSpot < 110) {
+      ball.x = leftMargin + 40
       ball.dx = -ball.dx;
       ball.dx += .5
       if (mouseSpeed > 1 || mouseSpeed < -1 ) ball.ddy = -mouseSpeed / 1000;
@@ -104,10 +106,13 @@ function paddleHit(mouseSpeed) {
     if (hitSpot > 100 && hitSpot < 59) { ball.dy = 5}
     if (ball.ddy > 0) { ball.dy = 0 }
   }
-  if (ball.x + ball.dx > leftMargin + field.width - 30  &&
+  if (ball.x + ball.dx > leftMargin + field.width - 30 - ball.dx  &&
       ball.x + ball.dx < leftMargin + field.width - 15) {
+
     hitSpot = ball.y - paddleRight.y
     if (hitSpot > -10 && hitSpot < 110) {
+      ball.x = leftMargin + field.width - 30
+
       ball.dx = -ball.dx - .5;
       ball.ddy = 0;
     }
@@ -163,7 +168,6 @@ function moveBall(ball) {
       ball.x > leftMargin - ball.radius &&
       ball.x < leftMargin + field.width + ball.radius) {
     ball.dy = -ball.dy;
-    console.log("ceiling hit after dx: " + ball.dx + "dy: " + ball.dy + "ddy: " + ball.ddy);
     //going right
     if (ball.dx > 0) {
       if (ball.ddy > 0) {
@@ -185,8 +189,6 @@ function moveBall(ball) {
       }
     }
     ball.ddy = 0;
-    console.log("ceiling hit after dx: " + ball.dx + "dy: " + ball.dy + "ddy: " +ball.ddy);
-
   }
   // floor hit
 
@@ -195,7 +197,6 @@ function moveBall(ball) {
       ball.x < leftMargin + field.width + ball.radius) {
     ball.dy = -ball.dy;
 
-    console.log("floor hit before dx: " + ball.dx + "dy: " + ball.dy + "ddy: " + ball.ddy);
     //going right
     if (ball.dx > 0) {
       //backspin
@@ -220,13 +221,12 @@ function moveBall(ball) {
       }
     }
     ball.ddy = 0;
-    console.log("floor hit after dx: " + ball.dx + "dy: " + ball.dy + "ddy: " +ball.ddy);
-
   }
 
 
   // endzone hit
   if (ball.x + ball.dx < leftMargin + ball.radius - 50) {
+    console.log(ball.dx);
     resetBall();
     score.right += 1;
   }
@@ -289,7 +289,7 @@ function Particle(x, y, dx, dy, r, ddy) {
     this.dy *= .9;
 
     this.r -= .04;
-    this.opacity -= .05;
+    this.opacity -= .04;
     this.timeLeft -= .1;
     this.redness += 25;
     if (this.redness > 255) {this.redness = 255}
