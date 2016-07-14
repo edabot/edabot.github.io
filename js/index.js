@@ -262,6 +262,7 @@ function drawGamePieces() {
 function Particle(x, y, dx, dy, r, ddy) {
   var angle = Math.random() * 2 * Math.PI;
   var distance = Math.random() * 8.5
+  if (ddy !== 0) { distance = 10 }
   this.x = x + Math.sin(angle) * distance;
   this.y = y + Math.cos(angle) * distance;
   this.dx = (Math.random() * 200 - 100) * Math.abs(ddy);
