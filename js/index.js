@@ -271,13 +271,13 @@ function Particle(x, y, dx, dy, r, ddy) {
   this.dy = (Math.random() * 200 - 100) * Math.abs(ddy);
 
   if (ddy > 0) {
-    this.dx += dx * 1.2;
-    this.dy += dy * 1.2;
+    this.dx += dx;
+    this.dy += dy;
   }
 
-  this.r = 3;
-  this.opacity = 2;
-  this.timeLeft = 2;
+  this.r = 2;
+  this.opacity = 1.5;
+  this.timeLeft = 4;
   this.redness = 255 - Math.abs(ddy) * 10000;
   if (this.redness < 0) {this.redness = 0}
 
@@ -290,8 +290,9 @@ function Particle(x, y, dx, dy, r, ddy) {
     this.dx *= .9;
     this.dy *= .9;
 
-    this.r -= .14;
-    this.opacity -= .1;
+    this.r -= .04;
+    this.opacity -= .05;
+    this.timeLeft -= .1;
     this.redness += 25;
     if (this.redness > 255) {this.redness = 255}
 
@@ -303,7 +304,6 @@ function Particle(x, y, dx, dy, r, ddy) {
     c.fill();
     c.closePath();
 
-    this.timeLeft -= .1;
   }
 
   this.remove = function() {
@@ -312,7 +312,7 @@ function Particle(x, y, dx, dy, r, ddy) {
 }
 
 function addParticle() {
-  for (var i = 0; i < 10; i++) {
+  for (var i = 0; i < 5; i++) {
     particles.push(new Particle(ball.x, ball.y, ball.dx, ball.dy, 5, ball.ddy));
   }
 }
@@ -345,8 +345,35 @@ function animate(){
   drawGamePieces();
 
   lastMouseY = mouse.y;
-
-
 }
 
 animate();
+//
+// var lastTime = null;
+//
+// animate = function(time){
+//   var timeDelta = time - lastTime;
+//   lastTime = time;
+//   clearTimeout(animate);
+//   setTimeout(animate, 10);
+//
+//   drawGameField();
+//
+//   mouseSpeed = mouse.y - lastMouseY;
+//   addSpeed(mouseSpeed);
+//
+//   paddleHit(currentSpeed(mouse.speeds));
+//   moveBall(ball);
+//   moveLeftPaddle(mouseSpeed);
+//   moveRightPaddle();
+//   addParticle();
+//   drawParticles();
+//   drawGamePieces();
+//
+//   lastMouseY = mouse.y;
+//   if (timeDelta > 10) {
+//     requestAnimationFrame(animate);
+//   }
+// };
+//
+// requestAnimationFrame(animate);
