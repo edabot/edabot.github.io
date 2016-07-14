@@ -84,7 +84,7 @@ function moveRightPaddle() {
 
 function paddleHit(mouseSpeed) {
   var hitSpot = 0;
-  if (ball.x + ball.dx < leftMargin + 30 && ball.x + ball.dx > leftMargin +20) {
+  if (ball.x + ball.dx < leftMargin + 30 && ball.x + ball.dx > leftMargin + 15) {
     hitSpot = ball.y - paddleLeft.y
     if (hitSpot > -10 && hitSpot < 110) {
       ball.dx = -ball.dx;
@@ -105,23 +105,12 @@ function paddleHit(mouseSpeed) {
     if (ball.ddy > 0) { ball.dy = 0 }
   }
   if (ball.x + ball.dx > leftMargin + field.width - 30  &&
-      ball.x + ball.dx < leftMargin + field.width - 20) {
+      ball.x + ball.dx < leftMargin + field.width - 15) {
     hitSpot = ball.y - paddleRight.y
     if (hitSpot > -10 && hitSpot < 110) {
       ball.dx = -ball.dx - .5;
       ball.ddy = 0;
     }
-    // if (hitSpot > -9 && hitSpot <= 0) { ball.dy = -5}
-    // if (hitSpot > 0 && hitSpot <= 11) { ball.dy = -4}
-    // if (hitSpot > 11 && hitSpot <= 22) { ball.dy = -3}
-    // if (hitSpot > 22 && hitSpot <= 33) { ball.dy = -2}
-    // if (hitSpot > 33 && hitSpot <= 45) { ball.dy = -1}
-    // if (hitSpot > 45 && hitSpot <= 55) { ball.dy = 0}
-    // if (hitSpot > 55 && hitSpot <= 66) { ball.dy = 1}
-    // if (hitSpot > 66 && hitSpot <= 77) { ball.dy = 2}
-    // if (hitSpot > 77 && hitSpot <= 88) { ball.dy = 3}
-    // if (hitSpot > 88 && hitSpot <= 100) { ball.dy = 4}
-    // if (hitSpot > 100 && hitSpot < 59) { ball.dy = 5}
     if (ball.ddy > 0) { ball.dy = 0 }
   }
 }
@@ -174,57 +163,65 @@ function moveBall(ball) {
       ball.x > leftMargin - ball.radius &&
       ball.x < leftMargin + field.width + ball.radius) {
     ball.dy = -ball.dy;
-
+    console.log("ceiling hit after dx: " + ball.dx + "dy: " + ball.dy + "ddy: " + ball.ddy);
     //going right
     if (ball.dx > 0) {
       if (ball.ddy > 0) {
-        ball.dy = ball.dy * (1 + ball.ddy * 3);
+        ball.dy = ball.dy * (1 + Math.abs(ball.ddy) * 3);
       }
       if (ball.ddy < 0) {
-        ball.dy = ball.dy * .8;
-        ball.dx += ball.dy * .2;
+        ball.dy -= Math.abs(ball.ddy) * 60;
+        ball.dx += Math.abs(ball.ddy) * 10;
       }
     }
     //going left
     if (ball.dx < 0) {
       if (ball.ddy < 0) {
-        ball.dy = ball.dy * (1 + ball.ddy * 3);
+        ball.dy = ball.dy * (1 + Math.abs(ball.ddy) * 3);
       }
       if (ball.ddy > 0) {
-        ball.dy = ball.dy * .8;
-        ball.dx -= ball.dy * .2;
+        ball.dy -= Math.abs(ball.ddy) * 60;
+        ball.dx += -ball.ddy * 10;
       }
     }
     ball.ddy = 0;
+    console.log("ceiling hit after dx: " + ball.dx + "dy: " + ball.dy + "ddy: " +ball.ddy);
+
   }
   // floor hit
+
   if (ball.y + ball.dy > 100 + field.height - ball.radius &&
       ball.x > leftMargin - ball.radius &&
       ball.x < leftMargin + field.width + ball.radius) {
     ball.dy = -ball.dy;
 
+    console.log("floor hit before dx: " + ball.dx + "dy: " + ball.dy + "ddy: " + ball.ddy);
     //going right
     if (ball.dx > 0) {
+      //backspin
       if (ball.ddy < 0) {
-        ball.dy = ball.dy * (1 + ball.ddy * 3);
+        ball.dy = ball.dy * (1 + Math.abs(ball.ddy) * 3);
       }
+      //forward spin
       if (ball.ddy > 0) {
-        ball.dy = ball.dy * .8;
-        ball.dx += ball.dy * .2;
+        ball.dy += Math.abs(ball.ddy) * 60;
+        ball.dx += ball.ddy * 10;
       }
     }
 
     //going left
     if (ball.dx > 0) {
       if (ball.ddy > 0) {
-        ball.dy = ball.dy * (1 + ball.ddy * 3);
+        ball.dy = ball.dy * (1 + Math.abs(ball.ddy) * 3);
       }
       if (ball.ddy < 0) {
-        ball.dy = ball.dy * .8;
-        ball.dx -= ball.dy * .2;
+        ball.dy += Math.abs(ball.ddy) * 60;
+        ball.dx += -ball.ddy * 10;
       }
     }
     ball.ddy = 0;
+    console.log("floor hit after dx: " + ball.dx + "dy: " + ball.dy + "ddy: " +ball.ddy);
+
   }
 
 
