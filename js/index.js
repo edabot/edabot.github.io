@@ -2,13 +2,17 @@
 var canvas = document.querySelector("canvas");
 var c = canvas.getContext('2d');
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.width = 900;
+canvas.height = 700;
 
 var field = {
   width: 800,
   height: 500
 }
+
+leftMargin = 50;
+topMargin = 100;
+paddleHeight = 100;
 
 var score = {
   left: 0,
@@ -16,8 +20,6 @@ var score = {
 }
 
 var particles = [];
-
-leftMargin = ((canvas.width - field.width) / 2);
 
 var mouse = {
   x: canvas.width / 2,
@@ -39,31 +41,31 @@ function currentSpeed(speeds){
 }
 
 var ball = {
-  x: 500,
-  y: 300,
-  dx: -3,
-  dy: 0,
+  x: leftMargin + 200,
+  y: 350,
+  dx: 3,
+  dy: Math.random() * 2 - 1,
   ddy: 0,
   radius: 10
 }
 
 function resetBall(){
-  ball.x = leftMargin + 600;
-  ball.y = 400;
-  ball.dx = -3;
-  ball.dy = 0;
+  ball.x = leftMargin + 200;
+  ball.y = 350;
+  ball.dx = 3;
+  ball.dy = Math.random() * 2 - 1;
   ball.ddy = 0;
 }
 
 var paddleLeft = {
-  height: 100,
+  height: paddleHeight,
   width: 10,
   x: leftMargin + 10,
   y: 100 + field.height / 2
 }
 
 var paddleRight = {
-  height: 100,
+  height: paddleHeight,
   width: 10,
   x: leftMargin + field.width - 20,
   y: 100 + field.height / 2
@@ -72,7 +74,7 @@ var paddleRight = {
 function moveLeftPaddle(dy) {
   paddleLeft.y += dy
   if (paddleLeft.y < 0) { paddleLeft.y = 0 }
-  if (paddleLeft.y > field.height + 100) { paddleLeft.y = field.height + 100}
+  if (paddleLeft.y > field.height + paddleHeight) { paddleLeft.y = field.height + paddleHeight}
 }
 
 function moveRightPaddle() {
@@ -124,11 +126,11 @@ var lastMouseY = mouse.y;
 
 var mouseSpeed = 0;
 
-window.addEventListener("resize", function(){
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-  leftMargin = ((canvas.width - field.width) / 2);
-})
+// window.addEventListener("resize", function(){
+//   canvas.width = window.innerWidth;
+//   canvas.height = window.innerHeight;
+//   leftMargin = ((canvas.width - field.width) / 2);
+// })
 
 window.addEventListener("mousemove", function(e){
   mouse.x = e.clientX;
@@ -142,10 +144,10 @@ function showSpin(text) {
 }
 
 function showScore(){
-  c.font = "48px serif";
-  c.fillStyle = "#ffffff";
-  c.fillText(score.left, leftMargin + 300, 50);
-  c.fillText(score.right, leftMargin + 500, 50);
+  c.font = "48px sans-serif";
+  c.fillStyle = "#d0d0d0";
+  c.fillText(score.left, leftMargin + 80, 60);
+  c.fillText(score.right, leftMargin + 695, 60);
 }
 
 function drawBall(ball){
