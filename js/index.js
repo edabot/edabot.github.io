@@ -326,6 +326,9 @@ function drawParticles(){
   }
 }
 
+function game(){
+  
+}
 
 function animate(){
   clearTimeout(animate);
