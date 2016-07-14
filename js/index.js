@@ -327,6 +327,10 @@ function drawParticles(){
 }
 
 function game(){
+  drawGameField();
+  c.font = "48px sans-serif";
+  c.fillStyle = "#d0d0d0";
+  c.fillText("press any key to start", leftMargin + 80, 300);
   
 }
 
