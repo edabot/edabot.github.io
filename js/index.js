@@ -278,8 +278,8 @@ function Particle(x, y, dx, dy, r, ddy) {
   this.r = 2;
   this.opacity = 1.5;
   this.timeLeft = 4;
-  this.redness = 255 - Math.abs(ddy) * 10000;
-  if (this.redness < 0) {this.redness = 0}
+  this.blueness = 255 - Math.abs(ddy) * 10000;
+  if (this.blueness < 0) {this.blueness = 0}
 
   this.update = function() {
     if (this.y + this.dy < 100 || this.y + this.dy > 100 + field.height) {
@@ -287,18 +287,18 @@ function Particle(x, y, dx, dy, r, ddy) {
     }
     this.x += this.dx;
     this.y += this.dy;
-    this.dx *= .9;
-    this.dy *= .9;
+    this.dx *= .93;
+    this.dy *= .93;
 
     this.r -= .04;
     this.opacity -= .04;
     this.timeLeft -= .1;
-    this.redness += 25;
-    if (this.redness > 255) {this.redness = 255}
+    this.blueness += 25;
+    if (this.blueness > 255) {this.blueness = 255}
 
     c.beginPath();
     c.fillStyle = "#ffffff";
-    c.fillStyle = 'rgba(255,' + this.redness + ',' + this.redness +',' + this.opacity + ')';
+    c.fillStyle = 'rgba(' + this.blueness + ',' + this.blueness +',' + '255, ' + this.opacity + ')';
 
     c.arc(this.x, this.y, this.r, 0, Math.PI * 2, false);
     c.fill();
@@ -331,7 +331,7 @@ function game(){
   c.font = "48px sans-serif";
   c.fillStyle = "#d0d0d0";
   c.fillText("press any key to start", leftMargin + 80, 300);
-  
+
 }
 
 function animate(){
