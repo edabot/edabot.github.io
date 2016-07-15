@@ -95,17 +95,17 @@ function paddleHit(mouseSpeed) {
       ball.dx += .5
       if (mouseSpeed > 1 || mouseSpeed < -1 ) ball.ddy = -mouseSpeed / 1000;
     }
-    if (hitSpot > -9 && hitSpot <= 0) { ball.dy = -5}
-    if (hitSpot > 0 && hitSpot <= 11) { ball.dy = -4}
+    if (hitSpot > -9 && hitSpot <= 0) { ball.dy = -4}
+    if (hitSpot > 0 && hitSpot <= 11) { ball.dy = -3.5}
     if (hitSpot > 11 && hitSpot <= 22) { ball.dy = -3}
     if (hitSpot > 22 && hitSpot <= 33) { ball.dy = -2}
-    if (hitSpot > 33 && hitSpot <= 45) { ball.dy = -1}
-    if (hitSpot > 45 && hitSpot <= 55) { ball.dy = 0}
-    if (hitSpot > 55 && hitSpot <= 66) { ball.dy = 1}
+    if (hitSpot > 33 && hitSpot <= 49) { ball.dy = -1}
+    if (hitSpot > 49 && hitSpot <= 51) { ball.dy = 0}
+    if (hitSpot > 51 && hitSpot <= 66) { ball.dy = 1}
     if (hitSpot > 66 && hitSpot <= 77) { ball.dy = 2}
     if (hitSpot > 77 && hitSpot <= 88) { ball.dy = 3}
-    if (hitSpot > 88 && hitSpot <= 100) { ball.dy = 4}
-    if (hitSpot > 100 && hitSpot < 59) { ball.dy = 5}
+    if (hitSpot > 88 && hitSpot <= 100) { ball.dy = 3.5}
+    if (hitSpot > 100 && hitSpot < 59) { ball.dy = 4}
     if (ball.ddy > 0) { ball.dy = 0 }
   }
   if (ball.x + ball.dx > leftMargin + field.width - 30 - ball.dx  &&
