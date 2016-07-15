@@ -275,7 +275,7 @@ function Particle(x, y, dx, dy, r, ddy) {
     this.dy += dy;
   }
 
-  this.r = 2;
+  this.r = 3;
   this.opacity = 1.5;
   this.timeLeft = 4;
   this.blueness = 255 - Math.abs(ddy) * 10000;
@@ -290,7 +290,7 @@ function Particle(x, y, dx, dy, r, ddy) {
     this.dx *= .93;
     this.dy *= .93;
 
-    this.r -= .04;
+    this.r -= .07;
     this.opacity -= .04;
     this.timeLeft -= .1;
     this.blueness += 25;
