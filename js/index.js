@@ -375,7 +375,7 @@ function gameOver(){
 
 function animate(){
   drawGameField();
-  mouseSpeed = mouse.y - lastMouseY;
+  mouseSpeed = 1.5 * (mouse.y - lastMouseY);
   addSpeed(mouseSpeed);
 
   paddleHit(currentSpeed(mouse.speeds));
