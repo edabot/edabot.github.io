@@ -1,34 +1,400 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="css/style.css" media="screen" title="no title" charset="utf-8">
-    <link href='https://fonts.googleapis.com/css?family=Orbitron:900' rel='stylesheet' type='text/css'>
-    <script>
-     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>IGN.com rating distributions</title>
 
-     ga('create', 'UA-81179304-2', 'auto');
-     ga('send', 'pageview');
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<!--	<style type="text/css">
+${demo.css}
+		</style>-->
+<script type="text/javascript">
+$(function () {
+    $('#container').highcharts({
+        title: {
+            text: 'Distrubution of video game ratings on IGN.com per year',
+            x: -20 //center
+        },
+        subtitle: {
+            text: 'Select years on right to turn on/off - Source: IGN.com - by Ed Lewis',
+            x: -20
+        },
+        xAxis: {
+            categories: ['1', '2', '3', '4', '5', '6',
+                '7', '8', '9', '10']
+        },
+        yAxis: {
+            title: {
+                text: 'Percentage'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: '%'
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [{
+            name: '1996',
+            data: [0.67,6.71,5.36,8.05,14.76,18.79,26.84,12.75,6.04,0],
+            visible:false
+        }, {
+            name: '1997',
+            data: [0.97,1.46,4.87,7.8,10.24,18.04,26.34,22.92,7.31,0],
+            visible:false
+        }, {
+            name: '1998',
+            data: [0.59,2.36,3.25,6.8,11.24,13.6,23.37,28.99,9.46,0.29],
+            visible:false
+        }, {
+            name: '1999',
+            data: [0.77,1.54,3.61,7.35,10.83,13.03,23.09,26.83,11.48,1.41],
+            visible:false
+        }, {
+            name: '2000',
+            data: [0.38,3.15,6.79,8.51,10.14,15.31,20.28,23.25,11.67,0.47],
+            visible:false
+        }, {
+            name: '2001',
+            data: [0.29,1.59,3.48,7.7,8.72,13.95,22.67,27.47,13.66,0.43],
+            visible:false
+        }, {
+            name: '2002',
+            data: [0.85,2.67,4.38,6.19,9.61,15.17,21.68,28.09,11.32,0],
+            visible:false
+        }, {
+            name: '2003',
+            data: [0.1,1.96,3.61,4.54,8.67,14.15,23.34,30.47,13.11,0],
+            visible:false
+        }, {
+            name: '2004',
+            data: [0.4,1.4,3.01,4.11,9.13,16.06,26.7,29.71,9.43,0]
+        }, {
+            name: '2005',
+            data: [0.18,0.55,1.93,4.87,9.37,16.72,28.21,30.14,7.9,0.09]
+        }, {
+            name: '2006',
+            data: [0.16,1.65,3.8,9.1,11.5,18.46,27.31,24.33,3.55,0.08],
+            visible:false
+        }, {
+            name: '2007',
+            data: [0.68,2.18,4.5,7.68,12.62,19.31,29,19.18,4.75,0.06],
+            visible:false
+        }, {
+            name: '2008',
+            data: [0.83,2.97,6.52,9.6,13.46,16.75,25.93,18.94,4.64,0.31],
+            visible:false
+        }, {
+            name: '2009',
+            data: [0.29,2.25,2.37,8,12.45,16.48,27.87,22.71,7.53,0],
+            visible:false
+        }, {
+            name: '2010',
+            data: [0.14,1.76,2.86,6.89,9.9,14.01,28.17,28.46,7.41,0.36],
+            visible:false
+        }, {
+            name: '2011',
+            data: [0.18,0.83,2.05,5.68,11.09,15.84,24.97,27.86,11.09,0.37],
+            visible:false
+        }, {
+            name: '2012',
+            data: [0,1.06,1.86,4.27,8.67,12.55,22.16,28.97,20.42,0],
+            visible:false
+        }, {
+            name: '2013',
+            data: [0,0.72,2.16,6.48,8.78,10.66,21.46,30.69,18.58,0.43],
+            visible:false
+        }, {
+            name: '2014',
+            data: [0,1.12,1.68,4.48,7.1,15.14,25.98,25.98,17.94,0.56]
+        }, {
+            name: '2015',
+            data: [0.29,0,0.88,1.76,4.7,16.17,25.58,34.41,15,1.17]
+        }]
+    });
+});
 
-    </script>
-  </head>
-  <body>
-    <div class="column">
-        <h1>SPIN PONG</h1>
-        <div class="git-link"><a href="https://github.com/edabot/spin-pong/">
-          github.com/edabot/spin-pong</a>
-        </div>
+$(function () {
+    $('#reviewsperyear').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'IGN.com video game reviews per year'
+        },
+        subtitle: {
+            text: 'Source: IGN.com'
+        },
+        xAxis: {
+            type: 'category',
+            labels: {
+                rotation: -45,
+                style: {
+                    fontSize: '13px',
+                    fontFamily: 'Verdana, sans-serif'
+                }
+            }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Reviews per year'
+            }
+        },
+        legend: {
+            enabled: false
+        },
+        tooltip: {
+            pointFormat: '<b>{point.y:.0f}</b>'
+        },
+        series: [{
+            name: 'Reviews',
+            data: [
+                ['1996', 149],
+                ['1997', 205],
+                ['1998', 338],
+                ['1999', 775],
+                ['2000', 1045],
+                ['2001', 668],
+                ['2002', 936],
+                ['2003', 968],
+                ['2004', 996],
+                ['2005', 1088],
+                ['2006', 1208],
+                ['2007', 1600],
+                ['2008', 1916],
+                ['2009', 1686],
+                ['2010', 1363],
+                ['2011', 1073],
+                ['2012', 749],
+                ['2013', 694],
+                ['2014', 535],
+                ['2015', 340]
+            ],
+            dataLabels: {
+                enabled: true,
+                rotation: -90,
+                color: '#FFFFFF',
+                align: 'right',
+                format: '{point.y:.0f}', // one decimal
+                y: 10, // 10 pixels down from the top
+                style: {
+                    fontSize: '13px',
+                    fontFamily: 'Verdana, sans-serif'
+                }
+            }
+        }]
+    });
+});
 
-      <div class="canvas">
-        <canvas width=910></canvas>
-      </div>
-    </div>
-    <script src="js/index.js"></script>
+$(function () {
+    $('#consoles').highcharts({
+        title: {
+            text: 'Distrubution of video game ratings on IGN.com by platform',
+            x: -20 //center
+        },
+        subtitle: {
+            text: 'Select platforms on right to turn on/off - Source: IGN.com - by Ed Lewis',
+            x: -20
+        },
+        xAxis: {
+            categories: ['1', '2', '3', '4', '5', '6',
+                '7', '8', '9', '10']
+        },
+        yAxis: {
+            title: {
+                text: 'Percentage'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: '%'
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [{
+            name: 'Xbox One',
+            data: [0,1.2,0,3.1,6.2,11.,24.,34.,18.,1.2],
+        }, {
+            name: 'Xbox 360',
+            data: [0.1,1.4,2.7,6.8,10.,15.,23.,27.,11.,0.3],
+            visible:false
+        }, {
+            name: 'Xbox',
+            data: [0.48,1.21,3.89,5.96,8.02,15.5,21.7,31.8,11.1,0],
+            visible:false
+        }, {
+            name: 'Wireless',
+            data: [0.22,0.88,1.98,3.19,7.81,14.7,37.2,28.6,5.17,0.11],
+            visible:false
+        }, {
+            name: 'Wii U',
+            data: [0,0,2.85,4.76,9.52,11.4,24.7,22.8,23.8,0],
+        }, {
+            name: 'Wii',
+            data: [1.24,4.03,5.49,10.5,14.5,15.8,24.4,18.9,4.54,0.29],
+            visible:false
+        }, {
+            name: 'GameCube',
+            data: [0,0.98,3.92,5.89,12.3,17.6,22.0,28.2,8.84,0],
+            visible:false
+        }, {
+            name: 'Nintendo 64',
+            data: [0.33,1.32,4.98,7.97,11.6,15.2,21.9,24.2,11.9,0.33],
+            visible:false
+        },{
+            name: 'PlayStation 4',
+            data: [0.47,0.95,1.42,2.38,5.23,11.4,25.2,31.9,19.5,1.42],
+        }, {
+            name: 'PlayStation 3',
+            data: [0.07,1.33,2.58,6.43,9.53,14.4,23.5,28.0,13.2,0.66],
+            visible:false
+        }, {
+            name: 'PlayStation 2',
+            data: [0.29,2.37,4.26,7.82,10.6,16.1,26.3,23.9,8.18,0],
+            visible:false
+        }, {
+            name: 'PlayStation',
+            data: [0.84,3.46,5.67,9.24,10.5,15.2,22.3,23.5,9.13,0],
+            visible:false
+        }, {
+            name: 'PC',
+            data: [0.45,1.44,2.72,5.42,9.71,15.4,25.7,28.7,10.2,0.06],
+        }, {
+            name: 'PlayStation Vita',
+            data: [0,0,3.31,5.96,7.94,12.5,23.8,26.4,19.8,0],
+            visible:false
+        }, {
+            name: 'PlayStation Portable',
+            data: [0,2.53,2.21,6.49,12.9,21.5,30.7,17.4,6.02,0],
+            visible:false
+        },  {
+            name: 'Nintendo 3DS',
+            data: [0,0.96,1.93,3.38,10.6,13.0,27.5,29.9,12.5,0],
+        }, {
+            name: 'Nintendo DSi',
+            data: [0.39,1.17,5.88,9.41,16.0,13.3,30.1,20.7,2.74,0],
+            visible:false
+        }, {
+            name: 'Nintendo DS',
+            data: [0.67,2.39,5.85,12.4,14.6,19.9,24.1,16.2,3.55,0],
+            visible:false
+        },{
+            name: 'Game Boy Advance',
+            data: [0.32,2.09,4.83,8.54,13.0,18.2,21.2,23.2,8.38,0],
+            visible:false
+        }, {
+            name: 'Dreamcast',
+            data: [0.34,3.49,3.49,5.24,5.59,13.9,16.0,31.4,19.9,0.34],
+            visible:false
+        }
+        ]
+    });
+});
 
 
-  </body>
+$(function () {
+    $('#reviewsperplatform').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'IGN.com video game reviews per platform'
+        },
+        subtitle: {
+            text: 'Source: IGN.com'
+        },
+        xAxis: {
+            type: 'category',
+            labels: {
+                rotation: -45,
+                style: {
+                    fontSize: '13px',
+                    fontFamily: 'Verdana, sans-serif'
+                }
+            }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Reviews per platform'
+            }
+        },
+        legend: {
+            enabled: false
+        },
+        tooltip: {
+            pointFormat: '<b>{point.y:.0f}</b>'
+        },
+        series: [{
+            name: 'Reviews',
+            data: [
+                ['Xbox One', 160],
+                ['Xbox 360', 1629],
+                ['Xbox', 822],
+                ['Wii U', 105],
+                ['Wii', 1364],
+                ['GameCube', 509],
+                ['Nintendo 64', 301],
+                ['PlayStation 4', 210],
+                ['PlayStation 3', 1353],
+                ['PlayStation 2', 1687],
+                ['PlayStation', 952],
+                //['PC', 3262],
+                ['PlayStation Vita', 151],
+                ['PlayStation Portable', 631],
+                ['Nintendo 3DS', 207],
+                ['Nintendo DSi', 255],
+                ['Nintendo DS', 1042],
+                ['Game Boy Advance', 620],
+                ['Dreamcast', 286],
+                ['Wireless', 908],
+            ],
+            dataLabels: {
+                enabled: true,
+                rotation: -90,
+                color: '#FFFFFF',
+                align: 'right',
+                format: '{point.y:.0f}', // one decimal
+                y: 10, // 10 pixels down from the top
+                style: {
+                    fontSize: '13px',
+                    fontFamily: 'Verdana, sans-serif'
+                }
+            }
+        }]
+    });
+});
+
+		</script>
+	</head>
+	<body>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<!--
+<script src="../../js/highcharts.js"></script>
+ <script src="../../js/modules/exporting.js"></script>-->
+
+<div id="container" style="min-width: 310px; height: 600px; margin: 0 auto"></div>
+<div id="reviewsperyear" style="min-width: 310px; height: 600px; margin: 0 auto"></div>
+<div id="consoles" style="min-width: 310px; height: 600px; margin: 0 auto"></div>
+<div id="reviewsperplatform" style="min-width: 310px; height: 600px; margin: 0 auto"></div>
+
+
+    </body>
 </html>
