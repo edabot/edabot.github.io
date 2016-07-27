@@ -9,6 +9,14 @@
 }
 
 .name_box h1 {
+  margin: 0 auto;
+}
+
+.name_box h3 {
+  margin-top: 8px;
+}
+
+.name_and_title {
   text-align: center;
   margin-top: 0;
   color: white;
@@ -16,7 +24,8 @@
   font-family: sans-serif;
   z-index: 10;
   position: relative;
-  top: -465px;
+  top: -472px;
+  padding: 0;
 }
 
 body {
