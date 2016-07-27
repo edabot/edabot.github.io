@@ -137,7 +137,7 @@ body {
 }
 
 .project_container {
-  width: 300px;
+  width: 310px;
   height: 190px;
   margin: 0 auto;
   padding: 0 5px;
@@ -147,11 +147,18 @@ body {
   width: 300px;
   height: 180px;
   margin: 5px;
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
   font-weight: 700;
-  padding-top: 30px;
-  font-size: 1.5em;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.project h2 {
+  font-family: 'Open Sans', sans-serif;
+  text-shadow: 0 0 6px black;
+  font-weight: 400;
+  text-align: center;
+  position: relative;
+  top: 50px;
 }
 
 .foodium {
