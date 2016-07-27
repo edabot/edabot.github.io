@@ -84,7 +84,7 @@ body {
 }
 
 .bar2 {
-  background-color: rgba(50,50,255,0.6);
+  background-color: rgba(50,50,255,0.7);
   transform: rotateZ(10deg);
   animation-duration: 20s;
   animation-name: pulse2;
