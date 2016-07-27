@@ -1,0 +1,127 @@
+.name_box {
+  width: 100%;
+  background-color: #333;
+  margin-top: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  height: 120px;
+  overflow: hidden;
+}
+
+.name_box h1 {
+  text-align: center;
+  margin-top: 0;
+  color: white;
+  vertical-align: middle;
+  font-family: sans-serif;
+  z-index: 10;
+  position: relative;
+  top: -465px;
+}
+
+body {
+  margin: 0;
+}
+
+
+@keyframes pulse1 {
+  0%, 100%{
+    left: -9%;
+    transform: rotateZ(5deg);
+
+  }
+  50% {
+    left: 20%;
+    transform: rotateZ(-6deg);
+
+  }
+}
+
+@keyframes pulse2 {
+  0%, 100%{
+    left: -20%;
+    transform: rotateZ(12deg);
+  }
+  50% {
+    left: 10%;
+    transform: rotateZ(-12deg);
+  }
+}
+
+@keyframes pulse3 {
+  0%, 100%{
+    left: -33%;
+    transform: rotateZ(-12deg);
+
+  }
+  50% {
+    left: 0%;
+    transform: rotateZ(8deg);
+
+  }
+}
+
+
+@keyframes pulse4 {
+  0%, 100%{
+    left: -44%;
+    transform: rotateZ(0deg);
+
+  }
+  50% {
+    left: -13%;
+    transform: rotateZ(13deg);
+
+  }
+}
+
+.bar1 {
+  background-color: rgba(0,255,0,0.6);
+  transform: rotateZ(10deg);
+  animation-duration: 30s;
+  animation-name: pulse1;
+  width: 8%;
+}
+
+.bar2 {
+  background-color: rgba(50,50,255,0.6);
+  transform: rotateZ(10deg);
+  animation-duration: 20s;
+  animation-name: pulse2;
+  animation-delay: .5s;
+  width: 10%;
+}
+
+.bar3 {
+  background-color: rgba(255,0,255,0.6);
+  transform: rotateZ(10deg);
+  animation-duration: 33s;
+  animation-name: pulse3;
+  animation-delay: 1s;
+  width: 12%;
+}
+
+.bar4 {
+  background-color: rgba(255,255,0,0.6);
+  animation-duration: 25s;
+  animation-name: pulse4;
+  animation-delay: 1.5s;
+  width: 14%;
+}
+
+.moving_bar {
+  top:-200px;
+  height: 500px;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  position: relative;
+  background-blend-mode: lighten;
+
+}
+
+.bars {
+  display: flex;
+  z-index: 9;
+
+}
