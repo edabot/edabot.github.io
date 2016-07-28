@@ -37,12 +37,12 @@ body {
 
 @keyframes pulse1 {
   0%, 100%{
-    left: -9%;
+    left: -3%;
     transform: rotateZ(5deg);
 
   }
   50% {
-    left: 20%;
+    left: 22%;
     transform: rotateZ(-6deg);
 
   }
@@ -50,23 +50,27 @@ body {
 
 @keyframes pulse2 {
   0%, 100%{
-    left: -20%;
+    left: -2%;
     transform: rotateZ(12deg);
   }
-  50% {
+  25% {
     left: 10%;
+    transform: rotateZ(-12deg);
+  }
+  75% {
+    left:-15%;
     transform: rotateZ(-12deg);
   }
 }
 
 @keyframes pulse3 {
   0%, 100%{
-    left: -33%;
+    left: 0%;
     transform: rotateZ(-12deg);
 
   }
   50% {
-    left: 0%;
+    left: -28%;
     transform: rotateZ(8deg);
 
   }
@@ -75,11 +79,16 @@ body {
 
 @keyframes pulse4 {
   0%, 100%{
-    left: -44%;
+    left: -28%;
     transform: rotateZ(0deg);
 
   }
-  50% {
+  25%{
+    left: -40%;
+    transform: rotateZ(0deg);
+
+  }
+  75% {
     left: -13%;
     transform: rotateZ(13deg);
 
@@ -89,7 +98,7 @@ body {
 .bar1 {
   background-color: rgba(0,255,0,0.6);
   transform: rotateZ(10deg);
-  animation-duration: 30s;
+  animation-duration: 31s;
   animation-name: pulse1;
   width: 8%;
 }
@@ -97,26 +106,23 @@ body {
 .bar2 {
   background-color: rgba(50,50,255,0.7);
   transform: rotateZ(10deg);
-  animation-duration: 20s;
+  animation-duration: 19s;
   animation-name: pulse2;
-  animation-delay: .5s;
   width: 10%;
 }
 
 .bar3 {
   background-color: rgba(255,0,255,0.6);
   transform: rotateZ(10deg);
-  animation-duration: 33s;
+  animation-duration: 37s;
   animation-name: pulse3;
-  animation-delay: 1s;
   width: 12%;
 }
 
 .bar4 {
   background-color: rgba(255,255,0,0.6);
-  animation-duration: 25s;
+  animation-duration: 23s;
   animation-name: pulse4;
-  animation-delay: 1.5s;
   width: 11%;
 }
 
