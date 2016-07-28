@@ -195,7 +195,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   font-size: 1.5em;
-  margin-top: 10px;
+  margin-top: 20px;
   margin-bottom: 5px;
   text-align: center;
 }
@@ -203,4 +203,28 @@ body {
 .project_container a {
   text-decoration: none;
   color: white;
+}
+
+.link-box {
+  display: block;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.link-box a {
+  text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+
+.link-box h2 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 1.5em;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.links {
+  margin: 0 auto;
 }
