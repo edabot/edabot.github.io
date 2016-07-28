@@ -1,0 +1,30 @@
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.description {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  color: #444;
+  font-size: 21px;
+  width: 600px;
+  margin: 20px auto;
+}
+
+.description a {
+  text-decoration: none;
+}
+
+.description h2 {
+  font-size: 1.5em;
+  font-weight: 700;
+  text-align: center;
+}
+
+.chart {
+  min-width: 310px;
+  max-width: 1000px;
+  height: 600px;
+  margin: 50px auto;
+}
