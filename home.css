@@ -50,14 +50,10 @@ body {
 
 @keyframes pulse2 {
   0%, 100%{
-    left: -2%;
+    left: 10%;
     transform: rotateZ(12deg);
   }
-  25% {
-    left: 10%;
-    transform: rotateZ(-12deg);
-  }
-  75% {
+  49% {
     left:-15%;
     transform: rotateZ(-12deg);
   }
@@ -69,7 +65,7 @@ body {
     transform: rotateZ(-12deg);
 
   }
-  50% {
+  52% {
     left: -28%;
     transform: rotateZ(8deg);
 
@@ -79,20 +75,14 @@ body {
 
 @keyframes pulse4 {
   0%, 100%{
-    left: -28%;
-    transform: rotateZ(0deg);
-
-  }
-  25%{
     left: -40%;
     transform: rotateZ(0deg);
-
   }
-  75% {
+  50%{
     left: -13%;
-    transform: rotateZ(13deg);
-
+    transform: rotateZ(0deg);
   }
+
 }
 
 .bar1 {
