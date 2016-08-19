@@ -1,0 +1,96 @@
+
+@keyframes pulse1 {
+  0%, 100%{
+    left: -3%;
+    transform: rotateZ(5deg);
+
+  }
+  50% {
+    left: 22%;
+    transform: rotateZ(-6deg);
+
+  }
+}
+
+@keyframes pulse2 {
+  0%, 100%{
+    left: 10%;
+    transform: rotateZ(12deg);
+  }
+  49% {
+    left:-15%;
+    transform: rotateZ(-12deg);
+  }
+}
+
+@keyframes pulse3 {
+  0%, 100%{
+    left: 0%;
+    transform: rotateZ(-12deg);
+
+  }
+  52% {
+    left: -28%;
+    transform: rotateZ(8deg);
+
+  }
+}
+
+
+@keyframes pulse4 {
+  0%, 100%{
+    left: -40%;
+    transform: rotateZ(0deg);
+  }
+  50%{
+    left: -13%;
+    transform: rotateZ(0deg);
+  }
+
+}
+
+.bar1 {
+  background-color: rgba(0,255,0,0.6);
+  transform: rotateZ(10deg);
+  animation-duration: 17s;
+  animation-name: pulse1;
+  width: 8%;
+}
+
+.bar2 {
+  background-color: rgba(50,50,255,0.7);
+  transform: rotateZ(10deg);
+  animation-duration: 19s;
+  animation-name: pulse2;
+  width: 10%;
+}
+
+.bar3 {
+  background-color: rgba(255,0,255,0.6);
+  transform: rotateZ(10deg);
+  animation-duration: 25s;
+  animation-name: pulse3;
+  width: 12%;
+}
+
+.bar4 {
+  background-color: rgba(255,255,0,0.6);
+  animation-duration: 23s;
+  animation-name: pulse4;
+  width: 11%;
+}
+
+.moving_bar {
+  top:-200px;
+  height: 500px;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  position: relative;
+  background-blend-mode: lighten;
+}
+
+.bars {
+  display: flex;
+  z-index: 9;
+}
