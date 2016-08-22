@@ -50,7 +50,7 @@
 }
 
 .bar1 {
-  background-color: rgba(0,255,0,0.6);
+  background-color: rgba(197,206,174,0.6);
   transform: rotateZ(10deg);
   animation-duration: 17s;
   animation-name: pulse1;
@@ -58,7 +58,7 @@
 }
 
 .bar2 {
-  background-color: rgba(50,50,255,0.7);
+  background-color: rgba(171,82,107,0.7);
   transform: rotateZ(10deg);
   animation-duration: 19s;
   animation-name: pulse2;
@@ -66,7 +66,7 @@
 }
 
 .bar3 {
-  background-color: rgba(255,0,255,0.6);
+  background-color: rgba(188,162,151,0.6);
   transform: rotateZ(10deg);
   animation-duration: 25s;
   animation-name: pulse3;
@@ -74,7 +74,7 @@
 }
 
 .bar4 {
-  background-color: rgba(255,255,0,0.6);
+  background-color: rgba(240,226,164,0.6);
   animation-duration: 23s;
   animation-name: pulse4;
   width: 11%;
