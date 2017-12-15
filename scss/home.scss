@@ -1,19 +1,24 @@
+body {
+  margin: 0;
+  background-color: #fafafa;
+}
+
 .jumbotron {
   height: 200px;
   background-color: #F4EBC3;
   overflow: hidden;
-}
 
-.jumbotron h1 {
-  margin: 0 auto;
-  font-weight: 700;
-  text-shadow: 2px 2px 2px #000;
-}
+  h1 {
+    margin: 0 auto;
+    font-weight: 700;
+    text-shadow: 2px 2px 2px #000;
+  }
 
-.jumbotron h3 {
-  margin-top: 0px;
-  font-weight: 300;
-  color: #444;
+  h3 {
+    margin-top: 0px;
+    font-weight: 300;
+    color: #444;
+  }
 }
 
 .name_and_title {
@@ -26,11 +31,6 @@
   position: relative;
   top: -486px;
   padding: 0;
-}
-
-body {
-  margin: 0;
-  background-color: #fafafa;
 }
 
 .project_container {
@@ -75,28 +75,28 @@ body {
   color: white;
 }
 
+a {
+  text-decoration: none;
+  color: #111;
+
+  &:hover {
+    text-decoration: none;
+    color: #888;
+  }
+}
+
 .link-box {
   display: block;
   margin: 30px auto;
   text-align: center;
-}
 
-a {
-  text-decoration: none;
-  color: #111;
-}
-
-a:hover {
-  text-decoration: none;
-  color: #888;
-}
-
-.link-box h2 {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 300;
-  font-size: 1.5em;
-  margin-top: 10px;
-  margin-bottom: 5px;
+  h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 1.5em;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
 }
 
 .links {

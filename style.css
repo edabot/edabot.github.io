@@ -1,35 +1,3 @@
-@keyframes pulse1 {
-  0%, 100% {
-    left: -3%;
-    transform: rotateZ(5deg); }
-  50% {
-    left: 22%;
-    transform: rotateZ(-6deg); } }
-
-@keyframes pulse2 {
-  0%, 100% {
-    left: 10%;
-    transform: rotateZ(12deg); }
-  49% {
-    left: -15%;
-    transform: rotateZ(-12deg); } }
-
-@keyframes pulse3 {
-  0%, 100% {
-    left: 0%;
-    transform: rotateZ(-12deg); }
-  52% {
-    left: -28%;
-    transform: rotateZ(8deg); } }
-
-@keyframes pulse4 {
-  0%, 100% {
-    left: -40%;
-    transform: rotateZ(0deg); }
-  50% {
-    left: -13%;
-    transform: rotateZ(0deg); } }
-
 .bars {
   display: flex;
   z-index: 9; }
@@ -65,20 +33,22 @@
     position: relative;
     background-blend-mode: lighten; }
 
+body {
+  margin: 0;
+  background-color: #fafafa; }
+
 .jumbotron {
   height: 200px;
   background-color: #F4EBC3;
   overflow: hidden; }
-
-.jumbotron h1 {
-  margin: 0 auto;
-  font-weight: 700;
-  text-shadow: 2px 2px 2px #000; }
-
-.jumbotron h3 {
-  margin-top: 0px;
-  font-weight: 300;
-  color: #444; }
+  .jumbotron h1 {
+    margin: 0 auto;
+    font-weight: 700;
+    text-shadow: 2px 2px 2px #000; }
+  .jumbotron h3 {
+    margin-top: 0px;
+    font-weight: 300;
+    color: #444; }
 
 .name_and_title {
   text-align: center;
@@ -90,10 +60,6 @@
   position: relative;
   top: -486px;
   padding: 0; }
-
-body {
-  margin: 0;
-  background-color: #fafafa; }
 
 .project_container {
   width: 310px;
@@ -131,25 +97,23 @@ body {
   text-decoration: none;
   color: white; }
 
+a {
+  text-decoration: none;
+  color: #111; }
+  a:hover {
+    text-decoration: none;
+    color: #888; }
+
 .link-box {
   display: block;
   margin: 30px auto;
   text-align: center; }
-
-a {
-  text-decoration: none;
-  color: #111; }
-
-a:hover {
-  text-decoration: none;
-  color: #888; }
-
-.link-box h2 {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 300;
-  font-size: 1.5em;
-  margin-top: 10px;
-  margin-bottom: 5px; }
+  .link-box h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 1.5em;
+    margin-top: 10px;
+    margin-bottom: 5px; }
 
 .links {
   margin: 0 auto; }
@@ -174,3 +138,35 @@ a:hover {
 .content {
   padding: 0 10px;
   overflow: hidden; }
+
+@keyframes pulse1 {
+  0%, 100% {
+    left: -3%;
+    transform: rotateZ(5deg); }
+  50% {
+    left: 22%;
+    transform: rotateZ(-6deg); } }
+
+@keyframes pulse2 {
+  0%, 100% {
+    left: 10%;
+    transform: rotateZ(12deg); }
+  49% {
+    left: -15%;
+    transform: rotateZ(-12deg); } }
+
+@keyframes pulse3 {
+  0%, 100% {
+    left: 0%;
+    transform: rotateZ(-12deg); }
+  52% {
+    left: -28%;
+    transform: rotateZ(8deg); } }
+
+@keyframes pulse4 {
+  0%, 100% {
+    left: -40%;
+    transform: rotateZ(0deg); }
+  50% {
+    left: -13%;
+    transform: rotateZ(0deg); } }
