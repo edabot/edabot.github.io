@@ -46,12 +46,22 @@ body {
   border-radius: 5px;
 }
 
-.project-img img {
-  margin-bottom: 30px;
+.project-img {
   border: 1px solid #aaa;
   border-radius: 5px;
-  max-width: 100%;
+  transition: all .3s;
+  margin-bottom: 30px;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 .5rem .5rem rgba(0, 0, 0, .2);
+  }
+
+  img {
+    max-width: 100%;
+  }
 }
+
 
 .project h2 {
   font-family: 'Open Sans', sans-serif;
